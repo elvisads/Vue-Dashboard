@@ -1,0 +1,33 @@
+@import '@/assets/scss/_main';
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background: red;
+
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        background-color: $purple;
+    }
+
+    .content-right {
+        width: calc(100% - 220px);
+        height: 100vh;
+        
+        
+        .navbar {
+            width: 100%;
+            height: 70px;
+            background-color: $purple;
+            filter: brightness(90%);
+        }
+
+        .pages {
+            width: 100%;
+            height: auto;
+            
+        }
+    }
+}
