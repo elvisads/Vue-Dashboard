@@ -11,11 +11,10 @@
         </div>
         <div class="menu">
             <ul>
-                <li><router-link :to="{name: 'home'}">Home</router-link></li>
-                <li><router-link :to="{name: 'products'}">Produtos</router-link></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><router-link :to="{name: 'home'}"><i class="fa fa-home" icon></i> Início</router-link></li>
+                <li><router-link :to="{name: 'products'}"><i class="fa fa-box" icon></i> Produtos</router-link></li>
+                <li><router-link :to="{name: 'products'}"><i class="fa fa-store" icon></i> Vendas</router-link></li>
+                <li><router-link :to="{name: 'products'}"><i class="fa fa-chart-bar" icon></i> Relatórios</router-link></li>
             </ul>
         </div>
     </div>
@@ -25,7 +24,6 @@
 <script>
 export default {
     name: 'SideBarComponent',
-    
 }
 </script>
 
@@ -72,7 +70,22 @@ export default {
             }
         }
     }
+    .menu {
+        padding: 10px;
 
+        ul li {
+            margin: 15px 0px ;
+            font-size: 18px;
+            list-style: none;
+            font-weight: 200;
+            
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        } 
+        
+    }
 }
 
 </style>

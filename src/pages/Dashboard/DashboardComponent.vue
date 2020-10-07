@@ -3,14 +3,15 @@
         <div class="sidebar">
             <SideBarComponent/>
         </div>
+
         <div class="content-right">
+            
             <div class="navbar">
                 <NavBarComponent/>
             </div>
 
             <div class="pages">
-                <p>page</p>
-
+                <slot name="slot-pages"></slot>
             </div>
         </div>
     </div>
