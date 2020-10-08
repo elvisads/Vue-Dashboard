@@ -20,20 +20,56 @@
                     </div>
                 </div>
             </div>
+            <div class="mt-5">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <ListsComponent :data="users" description="Clientes" :columns="['Nome', 'E-mail']"/>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <ListsComponent :data="users" description="Produtos" :columns="['Nome', 'E-mail']" />
+                    </div>
+
+                </div>
+            </div>
         </div>
     </DashboardComponent>
 </template>
 
 <script>
+/* eslint-disable*/
 import DashboardComponent from '../Dashboard/DashboardComponent';
 import CardsComponent from '../../components/CardsComponent';
+import ListsComponent from '../../components/ListsComponents';
+const axios = require('axios').default;
 
 export default {
+    name: 'HomeComponent',
+    data() {
+        return {
+            users: []
+        }
+    },
+    mounted() {
+        this.getUsers();
+    },
+    methods: {
+        async getUsers(){
+            const response = await axios.get('http://jsonplaceholder.typicode.com/users');
+            if(response.status == 200){
+                this.users = response.data;
+                console.log(response.data);
+            }else{
+                console.error("Ocorreu um erro na API.");
+            }
+        }
+    },
     components : {
         DashboardComponent,
         CardsComponent,
-    }    
-}
+        ListsComponent,
+    }
+}    
 </script>
 <style lang="scss" scoped>
     
@@ -41,5 +77,4 @@ export default {
         display: flex;
         justify-content: space-between;
     }
-
 </style> 
